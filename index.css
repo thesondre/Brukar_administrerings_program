@@ -1,0 +1,110 @@
+/* index.css */
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+#authF, #userEditor, #noRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    max-width: 400px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1, h3 {
+    color: black;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+
+input, select, button {
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+button {
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#userEditor, #authF {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+form label, form input, form select, form button {
+    max-width: 400px;
+}
+
+form hr {
+    width: 100%;
+    margin: 1.5rem 0;
+    border: 0.5px solid #ddd;
+}
+
+button[id*="Btn"], #signout {
+    margin: 0.5rem 0;
+    width: 100%;
+    max-width: 300px;
+}
+
+#editF, #createF {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+}
+
+#noRight {
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    #authF, #userEditor, #noRight {
+        max-width: 90%;
+        align-items: center;
+    }
+
+    button, input, select {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rediger brukar for [Skulenamn]</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="authF">
+        <label for="email">E-post</label>
+        <input type="email" id="email">
+        <label for="password">Passord</label>
+        <input type="password" id="password">
+        <br>
+        <button id="login">Log in</button>
+        
+    </div>
+    <article id="userEditor">
+        <div style="justify-self: center;">
+        <h3 id="welcome">Hei [namn] velkommen</h3>
+        <button id="signout">Logg ut</button> <br>
+        <br>
+        <h3>Kva vil du gjere idag?</h3>
+        <button id="createUserBtn">Lag brukar</button>
+        <button id="editUserBtn">Rediger brukar</button>
+    </div>
+        <form id="createF" style="display: none;">
+            <label for="createFirstname">Fornamn</label>
+            <input type="text" id="createFirstname" required>
+
+            <label for="createLastname">Etternamn</label>
+            <input type="text" id="createLastname" required>
+
+            <label for="createAdress">Adresse</label>
+            <input type="text" id="createAdress">
+
+            <label for="createTLF">TLF nummer</label>
+            <input type="number" id="createTLF" required>
+
+            <label for="createGender">Kjønn</label>
+            <select id="createGender" required>
+                <option>Velje kjønn</option>
+                <option value="male">Mann</option>
+                <option value="female">Kvinne</option>
+            </select>
+
+            <label for="createBirthdate">Fødselsdag</label>
+            <input type="date" id="createBirthdate" required>
+            <hr>
+            <label for="createRole">Rolle</label>
+            <select id="createRole" required></select>
+
+            <label for="createClass">Klasse</label>
+            <select id="createClass">
+                <option value="">Velje Klasse</option>
+            </select>
+            <hr>
+            <label for="createComputer">Datamaskin</label>
+            <input type="text" id="createComputer">
+            <label for="createComputerModel">Datamaskinmodell</label>
+            <select id="createComputerModel">
+                <option>Velje datamaskin</option>
+                <option value='AcerAcer Aspire Go 14" FHD'>AcerAcer Aspire Go 14" FHD</option>
+            </select>
+            <label for="createComputerAge">Datamaskin alder</label>
+            <input type="number" id="createComputerAge">
+            <br><br>
+            <label for="createPassword">Passord</label>
+            <input type="password" id="createPassword">
+            <br><br>
+            <button id="usrCreateBtn" type="submit">Lag brukar</button>
+        </form>
+
+
+        
+        <div id="editF" style="display: none;">
+            <label>Brukar</label>
+            <select id="findUser" required>
+                <option>Brukar</option>
+            </select><button id="chooseUser">Velg brukar</button>
+            <p style="margin: 0%; padding: 0%;">Eller</p>
+            <label for="username">Brukarnamn</label>
+            <input type="text" placeholder="brukarnamn" id="searchUsers">
+            <button id="searchUserBtn">Søk</button>
+            <hr>
+            <div Lærar Admin style="display: none;">
+                
+                <br><br>
+                <label for="editFirstname">Fornamn</label>
+                <input type="text" id="editFirstname">
+
+                <label for="editLastname">Etternamn</label>
+                <input type="text" id="editLastname">
+                
+                <label for="editAdress">Adresse</label>
+                <input type="text" id="editAdress">
+
+                <label for="editTLF">TLF nummer</label>
+                <input type="number" id="editTLF">
+
+                <label for="editGender">Kjønn</label>
+                <select id="editGender">
+                    <option value="male">Mann</option>
+                    <option value="female">Kvinne</option>
+                </select>
+
+                <label for="editBirthdate">Fødselsdag</label>
+                <input type="date" id="editBirthdate">
+                <br><hr><br>
+            </div>
+            
+            <div admin style="display: none;">
+                <h3>Roller</h3>
+                <label for="editRole">Rolle</label>
+                <select id="editRole"></select>
+
+                <label for="editClass">Klasse</label>
+                <select id="editClass">
+                    <option value="">Velje Klasse</option>
+                </select>
+            </div>
+            
+            <br>
+            <hr>
+            <div IT Admin style="display: none;">
+                <h4>Datamaskin</h4>
+                <label for="editComputer">Datamaskin</label>
+                <input type="text" id="editComputer">
+                <label for="editComputerModel">Datamaskinmodell</label>
+                <select id="editComputerModel">
+                    <option>Velje datamaskin</option>
+                    <option value='AcerAcer Aspire Go 14" FHD'>AcerAcer Aspire Go 14" FHD</option>
+                </select>
+                <label for="editComputerAge">Datamaskin alder</label>
+                <input type="number" id="editComputerAge">
+            </div>
+            
+            <br><br><!--
+            <label for="editPassword">Passord</label>
+            <input type="password" id="editPassword">-->
+            <button id="SearchUserUpdateBtn" style="display: none;">Oppdater brukar</button>
+            <button id="FindUserUpdateBtn" style="display: none;">Oppdater brukar</button>
+        </div>
+        
+    </article>
+    <div id="noRight" style="display: none;">
+        <h1 id="notWelcome">Hei du har ikkje rettigheiter til denne sida</h1>
+        <button id="noRightLogOutBtn">Logg ut</button>
+    </div>
+    
+
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut
+    } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"
+    import {getDatabase, ref, update, get, child, remove, set, onValue } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js"
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyB8LUeRaadx_rHrOSkgaWI46Tk90hCRftY",
+    authDomain: "vurdering-9f8d9.firebaseapp.com",
+    projectId: "vurdering-9f8d9",
+    storageBucket: "vurdering-9f8d9.firebasestorage.app",
+    messagingSenderId: "1047433291399",
+    appId: "1:1047433291399:web:4ae3602bc9c8027a4bfa22"
+  };
+
+  // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const db = getDatabase();
+    
+    var currentUserEmail;
+    var userRole = "";
+    
+    //Variablane til auth
+    
+    const email = document.getElementById("email")
+    const password = document.getElementById("password")
+    const login = document.getElementById("login")
+    const eSignout = document.getElementById("signout")
+    const authF = document.getElementById("authF");
+
+
+    //variablane til CURD
+    const classes = ["VG1", "VG2", "VG3"]
+    const role = ["Lærar", "Elev", "Admin", "IT-Medarbeider", "Miljømedarbeidar", "Annen"]
+    const roleValue = ["Teacher", "Student", "Administrator", "IT-Department", "Enviromental-worker",  "Other"] 
+
+    const userEditorBtn = document.getElementById("editUserBtn");
+    const createUserBtn = document.getElementById("createUserBtn");
+    const editUser = document.getElementById("editUser");
+    const createF = document.getElementById("createF");
+    const editF = document.getElementById("editF")
+    const createRole = document.getElementById("createRole")
+    const editRole = document.getElementById("editRole")
+    const welcome = document.getElementById("welcome")
+    const notWelcome = document.getElementById("notWelcome")
+
+    //create
+    const createFirstname = document.getElementById("createFirstname")
+    const createLastname = document.getElementById("createLastname")
+    const createAdress = document.getElementById("createAdress")
+    const createTLF = document.getElementById("createTLF")
+    const createGender = document.getElementById("createGender")
+    const createBirthdate = document.getElementById("createBirthdate")
+    const createRolle = document.getElementById("createRolle")
+    const createClass = document.getElementById("createClass")
+    const createComputer = document.getElementById("createComputer")
+    const createComputerModel = document.getElementById("createComputerModel")
+    const createComputerAge = document.getElementById("createComputerAge")
+    const createPassword = document.getElementById("createPassword")
+
+    //edit
+    const chooseUser = document.getElementById("chooseUser")
+    const findUser = document.getElementById("findUser")
+    const editFirstname = document.getElementById("editFirstname")
+    const editLastname = document.getElementById("editLastname")
+    const editAdress = document.getElementById("editAdress")
+    const editTLF = document.getElementById("editTLF")
+    const editGender = document.getElementById("editGender")
+    const editBirthdate = document.getElementById("editBirthdate")
+    const editRolle = document.getElementById("editRolle")
+    const editClass = document.getElementById("editClass")
+    const searchUsers = document.getElementById("searchUsers")
+    const users = document.getElementById("users")
+    const editComputer = document.getElementById("createComputer")
+    const editComputerModel = document.getElementById("createComputerModel")
+    const editComputerAge = document.getElementById("createComputerAge")
+
+
+    const noRightLogOutBtn = document.getElementById("noRightLogOutBtn")
+    const noRight = document.getElementById("noRight")
+
+    const userCreateBtn = document.getElementById("usrCreateBtn")
+    const userUptateBtn = document.getElementById("userUpdateBtn")
+    const FindUserUpdateBtn = document.getElementById("FindUserUpdateBtn")
+    const SearchUserUpdateBtn = document.getElementById("SearchUserUpdateBtn")
+    const searchUserBtn = document.getElementById("searchUserBtn")
+
+    const usrSignUp=async(username)=>{
+    const signUpEmail=username+"@skule.no";
+    const signUpPassword=createPassword.value;
+    createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+    .then((userCredential)=>{
+        alert("Brukar oppretta"+ userCredential.email)
+        update(ref(db, "Skulen/"+username),{
+            UID:userCredential.user.uid
+        })
+    })
+    .catch((error)=>{
+        const errorCode = error.code
+        const errorMessage = error.message
+        console.log(errorCode+errorMessage)
+    })
+  }
+
+    async function usrSignIn(){
+        const signInEmail = email.value;
+        const signInPassword = password.value;
+        signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+        .then((userCredential)=>{
+            const user = userCredential.user;
+        }) 
+        .catch((error)=>{
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode+errorMessage)
+        })
+    }
+
+  
+    onAuthStateChanged(auth, async user=>{
+        if(user){
+            checkUserRole()
+            currentUserEmail = user.email
+            get(child(ref(db), "Skulen/"+currentUserEmail.split("@")[0]))
+            .then((snapchot)=>{
+                if(snapchot.exists()){
+                    console.log(snapchot.val())
+                    const data = snapchot.val()
+                    userRole = data.Role
+                    console.log("Velkommen "+data.Firstname +" "+data.Lastname+" "+data.Role)
+                    welcome.innerHTML=`Hei ${data.Firstname} ${data.Lastname}. ${data.Role} Velkommen!`
+                    notWelcome.innerHTML=`Hei ${data.Firstname} ${data.Lastname}. Du har ikkje rettigheiter til denne nettsida.
+                    <br>Din rolle er: ${data.Role}`
+                    console.log(userRole)
+
+                if(userRole == "Administrator"|| userRole =="Teacher"||userRole=="IT-Department") {
+                    console.log("Faller inn i kategorien Admin Lærar og it")
+                    userEditor.style.display="block"
+                    authF.style.display = "none"
+                    noRight.style.display = "none"
+                    //= `Hei ${user.email}, velkommen`
+                } else {
+                    noRight.style.display = "block"
+                    userEditor.style.display="none"
+                    authF.style.display = "none"
+                }
+                }                
+            }).catch((error)=>{
+                console.error(error)
+            })
+            
+                
+            
+            
+            
+        }else{
+            userEditor.style.display="none"
+            authF.style.display = "block"
+            noRight.style.display ="none"
+            
+        }
+    })
+  
+  async function onSignOut(){
+    await signOut(auth)
+    createF.style.display="none"
+    editF.style.display="none"
+    location.reload()
+    
+  }
+
+  login.addEventListener("click", usrSignIn)
+  eSignout.addEventListener("click", onSignOut)
+  noRightLogOutBtn.addEventListener("click", onSignOut)
+
+  //CURD kode
+
+
+
+  createUserBtn.onclick=function(){
+        
+        editF.style.display = "none"
+        createF.style.display ="block"
+
+
+
+        createClass.innerHTML = "<option>Velje klasse</option>"
+        for(var i of classes){
+            createClass.innerHTML += `<option value="${i}">${i}</option>`
+        }
+        createRole.innerHTML=""
+        for(var i in role){
+            createRole.innerHTML+=`<option value="${roleValue[i]}">${role[i]}</option>`
+        }
+
+        }
+ createF.onsubmit=function(evt){
+    evt.preventDefault()
+    insertData()
+ } 
+  userEditorBtn.onclick=function(){
+    createF.style.display = "none"
+    editF.style.display ="block"
+    
+    console.log(userRole)
+    editClass.innerHTML = "<option>Velje klasse</option>"
+    editRole.innerHTML=""
+    for(var i of classes){
+        editClass.innerHTML += `<option value="${i}">${i}</option>`
+    }
+    
+    for(var i in role){
+        editRole.innerHTML+=`<option value="${roleValue[i]}">${role[i]}</option>`
+    }
+    async function updateUserSearch() {
+        get(child(ref(db), "Skulen/"))
+            .then((snapchot)=>{
+                if(snapchot.exists()){
+                    console.log(snapchot.val())
+                    const data = snapchot.val()
+                    findUser.innerHTML="<option>Velje Brukar</option>"
+                    for(var i of Object.keys(data)){
+                        findUser.innerHTML+=`<option value="${i}">${i}</option>`
+                    }
+                }                
+            }).catch((error)=>{
+                console.error(error)
+            })
+    }
+    updateUserSearch()
+
+            
+    
+    if(userRole == "Administrator"){ //kjekka om brukaren har administrator rettigheitar
+        console.log("Brukaren er admin")
+        for(var i of document.querySelectorAll("div[Admin]")){
+            i.style.display="block"
+        }
+    }
+    if(userRole=="Teacher") {
+        console.log("Brukaren er lærar")
+        for(var i of document.querySelectorAll("div[Lærar]")){
+            i.style.display="block"
+        }
+    }
+    
+  }
+  chooseUser.onclick=function(){
+        selectData(findUser.value)
+        SearchUserUpdateBtn.style.display="none"
+        FindUserUpdateBtn.style.display="block"
+    }
+  //userCreateBtn.onclick=insertData
+  searchUserBtn.onclick=function(){
+    selectData(searchUsers.value)
+    SearchUserUpdateBtn.style.display="block"
+    FindUserUpdateBtn.style.display="none"
+
+}
+SearchUserUpdateBtn.onclick=function(){
+    updateData(searchUsers.value)
+}
+FindUserUpdateBtn.onclick=function(){
+    updateData(findUser.value)
+}
+
+  //userUptateBtn.onclick=function(){updateData(searchUsers.value)}
+
+   function insertData(){
+            var username = ((createFirstname.value.toLowerCase()).substr(0,3)+(createLastname.value.toLowerCase()).substr(0,3))
+            usrSignUp(username)
+            set(ref(db, "Skulen/"+username),{
+                Firstname:createFirstname.value,
+                Lastname: createLastname.value,
+                Adress: createAdress.value,
+                PhoneN: createTLF.value,
+                Gender: createGender.value,
+                Birthdate: createBirthdate.value,
+                Role: createRole.value,
+                Class: createClass.value,
+                ComputerName: createComputer.value,
+                ComputerModel: createComputerModel.value,
+                ComputerAge: createComputerAge.value,
+                
+            })
+            .then(()=>{
+                alert("Data ble lagra")
+                createF.reset()
+            })
+            .catch((error)=>{
+                alert("Data ble ikkje lagra "+error)
+            })
+        }
+  
+  function selectData(user){
+            const dbref=ref(db)
+            get(child(dbref, "Skulen/"+user))
+            .then((snapchot)=>{
+                if(snapchot.exists()){
+                console.log(snapchot.val())
+                editFirstname.value = snapchot.val().Firstname
+                editLastname.value = snapchot.val().Lastname
+                editAdress.value = snapchot.val().Adress
+                editTLF.value = snapchot.val().PhoneN
+                editGender.value = snapchot.val().Gender
+                editBirthdate.value = snapchot.val().Birthdate
+                editRole.value = snapchot.val().Role
+                editClass.value = snapchot.val().Class
+                editComputer.value = snapchot.val().ComputerName
+                editComputerModel.value = snapchot.val().ComputerModel
+                editComputerAge.value = snapchot.val().ComputerAge
+                
+                }
+                else{
+                    alert("Ingen data")
+                }
+            })
+            .catch((error)=>{
+                console.error(error)
+            })
+        }
+    async function checkUserRole() {
+        const dbref = ref(db)
+        get(child(dbref, "Skulen/"+auth.currentUser.email.split("@")[0]))//Henter ut eposten til brukaren som er logga på og brukar split til å få brukarnamnet som er før @.
+            .then((snapchot)=>{
+                if(snapchot.exists()){
+                    const data = snapchot.val()
+                    userRole = data.Role// setter userRole til rollen til brukaren
+                }                
+            })
+            .catch((error)=>{
+                console.log("Misslykka, error"+error)
+            })
+    }
+    function updateData(user){
+            update(ref(db, "Skulen/"+user), {
+                Firstname:editFirstname.value,
+                Lastname: editLastname.value,
+                Adress: editAdress.value,
+                PhoneN: editTLF.value,
+                Gender: editGender.value,
+                Birthdate: editBirthdate.value,
+                Role: editRole.value,
+                Class: editClass.value,
+                ComputerName: editComputer.value,
+                ComputerModel: editComputerModel.value,
+                ComputerAge: editComputerAge.value
+            })
+            .then(()=>{
+                alert("Data ble oppdatert")
+            })
+            .catch((error)=>{
+                alert("Data ble ikkje oppdatert"+error)
+            })
+        }
+</script>
+</body>
+</html>
