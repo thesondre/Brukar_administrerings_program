@@ -1,4 +1,5 @@
 # Brukar_administrerings_program
+## Denne applikasjonen er ikkje eit ferdig produkt dette er bare en show off
 Gå til firebase console, opprett ein brukar vist du ikkje har.<br>
 Opprett eit prosjekt.<br>
 Skru av google analytics(Gemeni er valgfritt)<br>
@@ -23,4 +24,9 @@ Gå på email/password og skru den på<br>
 Gå til users og lag en ny brukar.<br>
 Du treng ikkje å skrive inn dit ekte epost vist du ikkje ønska(Eksempel: test@fake.mail)<br>
 På høyre side finn du en dropdown meny som heit build.<br>
+Trykk på denn og bla ned til du finn "realtime database"<br>
+Opne den og lag en database. Du kan velje plasering sjølv, du vil helst ha det nermast deg.<br>
+Etter det får du to valg: "Locked mode" eller "Test mode".<br>
+velg Test mode og forsett.<br>
+
 
